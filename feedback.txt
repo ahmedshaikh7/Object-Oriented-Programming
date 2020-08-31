@@ -1,0 +1,293 @@
+==================== Start: checking coding style ===================
+[INFO] Loaded configuration file: pyta/a4_pyta.txt
+[INFO] Loaded configuration file: pyta/a4_pyta.txt
+word.py
+=== Code errors/forbidden usage (fix: high priority) ===
+None!
+
+=== Style/convention errors (fix: before submission) ===
+C0111 (missing-docstring)  Number of occurrences: 3.
+  [Line 1] Missing module docstring
+       """YOUR DOCSTRING HERE"""
+    1  from typing import List
+    2  
+
+  [Line 4] Missing class docstring
+    4  class Definition:
+           """YOUR DOCSTRING HERE"""
+    5      def __init__(self, definition: str, part_of_speech: str):
+    6          self.definition = definition
+
+  [Line 18] Missing class docstring
+   18  class Entry:
+           """YOUR DOCSTRING HERE"""
+   19      def __init__(self, word: str, definitions: List[Definition]):
+   20          #implement
+
+E9973 (type-annotation-inst-var)  Number of occurrences: 4.
+  [Line 6] Instance variable should be annotated in class body
+    4  class Definition:
+    5      def __init__(self, definition: str, part_of_speech: str):
+    6          self.definition = definition
+    7          self.part_of_speech = part_of_speech
+    8  
+
+  [Line 7] Instance variable should be annotated in class body
+    5      def __init__(self, definition: str, part_of_speech: str):
+    6          self.definition = definition
+    7          self.part_of_speech = part_of_speech
+    8  
+    9  
+
+  [Line 21] Instance variable should be annotated in class body
+   19      def __init__(self, word: str, definitions: List[Definition]):
+   20          #implement
+   21          self.word = word
+   22          self.definitions = definitions
+   23  
+
+  [Line 22] Instance variable should be annotated in class body
+   20          #implement
+   21          self.word = word
+   22          self.definitions = definitions
+   23  
+   24      def __repr__(self):
+
+E9971 (type-annotation-return)  Number of occurrences: 4.
+  [Line 5] Function is missing return type annotation
+    3  
+    4  class Definition:
+    5      def __init__(self, definition: str, part_of_speech: str):
+    6          self.definition = definition
+    7          self.part_of_speech = part_of_speech
+
+  [Line 10] Function is missing return type annotation
+    8  
+    9  
+   10      def __repr__(self):
+   11          s = self.part_of_speech.upper()
+   12          s += ". "
+
+  [Line 19] Function is missing return type annotation
+   17  
+   18  class Entry:
+   19      def __init__(self, word: str, definitions: List[Definition]):
+   20          #implement
+   21          self.word = word
+
+  [Line 24] Function is missing return type annotation
+   22          self.definitions = definitions
+   23  
+   24      def __repr__(self):
+   25          i = 1
+   26          s = self.word
+
+
+[INFO] Loaded configuration file: pyta/a4_pyta.txt
+[INFO] Loaded configuration file: pyta/a4_pyta.txt
+dictionary_class.py
+=== Code errors/forbidden usage (fix: high priority) ===
+None!
+
+=== Style/convention errors (fix: before submission) ===
+C0326 (bad-whitespace)  Number of occurrences: 2.
+  [Line 46] No space allowed around keyword argument assignment
+   44              if first_letter in self.entries:
+   45                  self.entries[first_letter].append(entry)
+   46                  self.entries[first_letter].sort(key = lambda x: x.word)
+   47              else:
+   48                  self.entries[first_letter] = [entry]
+
+  [Line 102] No space allowed around keyword argument assignment
+  100  
+  101          return -1
+  102      def __levenshtein_dist__(self, word1: str, word2: str, display = False) -> int:
+  103          ''' Return the minimum edit distance between two words, word1 and word2.
+  104          The optional display parameter displays the full calculation matrix when
+
+C0301 (line-too-long)  Number of occurrences: 3.
+  [Line 102] Line too long (83/80)
+  100  
+  101          return -1
+  102      def __levenshtein_dist__(self, word1: str, word2: str, display = False) -> int:
+  103          ''' Return the minimum edit distance between two words, word1 and word2.
+  104          The optional display parameter displays the full calculation matrix when
+
+  [Line 107] Line too long (84/80)
+  105          set to True, and hides it otherwise.
+  106  
+  107          The minimum edit distance is the minimum number of {swaps, inserts, deletes}
+  108          needed to change word1 to word2 and vice versa.
+  109  
+
+  [Line 128] Line too long (92/80)
+  126                      (val1, val2, val3) = (dist_array[i][j-1] + 1, \
+  127                                            dist_array[i-1][j] + 1, \
+  128                                            dist_array[i-1][j-1] + (word1[i-1] != word2[j-1]))
+  129  
+  130                      dist_array[i][j] = min(val1, val2, val3)
+
+C0111 (missing-docstring)  Number of occurrences: 6. (First 5 shown).
+  [Line 1] Missing module docstring
+       """YOUR DOCSTRING HERE"""
+    1  from word import Definition, Entry
+    2  from typing import List
+
+  [Line 4] Missing class docstring
+    4  class MyDictionary:
+           """YOUR DOCSTRING HERE"""
+    5      def __init__(self) -> None:
+    6          #implement
+
+  [Line 11] Missing method docstring
+   11      def get_num_entries(self) -> int:
+   12          # implement
+               """YOUR DOCSTRING HERE"""
+   13          return self.__num_entries__
+   14  
+
+  [Line 15] Missing method docstring
+   15      def suggest_closest_word(self, word: str) -> str:
+   16  
+   17          #score_werd = self.__levenshtein_dist__(werd, word)
+   18          #for self.werd in mydictionary:
+   19  
+               """YOUR DOCSTRING HERE"""
+   20          distance_list = []
+   21          word_list = []
+
+  [Line 41] Missing method docstring
+   41      def add_entries(self, entries: List[Entry]) -> None:
+               """YOUR DOCSTRING HERE"""
+   42          for entry in entries:
+   43              first_letter = entry.word[0]
+
+E9973 (type-annotation-inst-var)  Number of occurrences: 2.
+  [Line 7] Instance variable should be annotated in class body
+    5      def __init__(self) -> None:
+    6          #implement
+    7          self.entries = {}
+    8          self.__num_entries__ = 0
+    9  
+
+  [Line 8] Instance variable should be annotated in class body
+    6          #implement
+    7          self.entries = {}
+    8          self.__num_entries__ = 0
+    9  
+   10  
+
+W0621 (redefined-outer-name)  Number of occurrences: 5.
+  [Line 15] Redefining name 'word' from outer scope (line 162)
+   13          return self.__num_entries__
+   14  
+   15      def suggest_closest_word(self, word: str) -> str:
+   16  
+   17          #score_werd = self.__levenshtein_dist__(werd, word)
+
+  [Line 42] Redefining name 'entry' from outer scope (line 164)
+   40  
+   41      def add_entries(self, entries: List[Entry]) -> None:
+   42          for entry in entries:
+   43              first_letter = entry.word[0]
+   44              if first_letter in self.entries:
+
+  [Line 51] Redefining name 'word' from outer scope (line 162)
+   49          self.__num_entries__ += len(entries)
+   50  
+   51      def get_entries_by_window(self, word: str, window: int) -> List[Entry]:
+   52          i = self.get_word_index(word)
+   53          if i == -1:
+
+  [Line 63] Redefining name 'word' from outer scope (line 162)
+   61              return self.entries[word[0]][start_i:end_i]
+   62  
+   63      def get_word_index(self, word: str) -> int:
+   64          ''' Return the index of word in the List given by accessing the
+   65          value of self.entries, associated with key word[0]. If the word is
+
+  [Line 143] Redefining name 'entry' from outer scope (line 164)
+  141          keys.sort()
+  142          for key in keys:
+  143              for entry in self.entries[key]:
+  144                  s += str(entry)
+  145                  s += '\n'
+
+C0201 (consider-iterating-dictionary)  Number of occurrences: 1.
+  [Line 23] Consider iterating the dictionary directly instead of calling .keys()
+   21          word_list = []
+   22  
+   23          for letter in self.entries.keys():
+   24              for i in range(len(self.entries[letter])):
+   25                  the_word = self.entries[letter][i].word
+
+R1710 (inconsistent-return-statements)  Number of occurrences: 1.
+  [Line 15] Either all return statements in a function should return an expression, or none of them should.
+   13          return self.__num_entries__
+   14  
+   15      def suggest_closest_word(self, word: str) -> str:
+   16  
+   17          #score_werd = self.__levenshtein_dist__(werd, word)
+   18          #for self.werd in mydictionary:
+   19  
+   20          distance_list = []
+   21          word_list = []
+   22  
+   23          for letter in self.entries.keys():
+   24              for i in range(len(self.entries[letter])):
+   25                  the_word = self.entries[letter][i].word
+   26                  word_list.append(the_word)
+   27  
+   28          #appends each levenshtein distance into an empty list
+   29          for each in word_list:
+   30              val = self.__levenshtein_dist__(each, word)
+   31              distance_list.append(val)
+   32  
+   33  
+   34          #uses parallel lists to use the number to call the cooresponding word
+   35          for x in range(len(distance_list)):
+   36              if distance_list[x] == min(distance_list):
+   37                  return word_list[x]
+   38  
+   39  
+
+E9970 (type-annotation-param)  Number of occurrences: 1.
+  [Line 102] Function parameter is missing type annotation
+  100  
+  101          return -1
+  102      def __levenshtein_dist__(self, word1: str, word2: str, display = False) -> int:
+  103          ''' Return the minimum edit distance between two words, word1 and word2.
+  104          The optional display parameter displays the full calculation matrix when
+
+E9971 (type-annotation-return)  Number of occurrences: 1.
+  [Line 138] Function is missing return type annotation
+  136          return dist_array[-1][-1]
+  137  
+  138      def __repr__(self):
+  139          s = ''
+  140          keys = list(self.entries.keys())
+
+W0611 (unused-import)  Number of occurrences: 1.
+  [Line 1] Unused Definition imported from word
+    1  from word import Definition, Entry
+    2  from typing import List
+    3  
+
+C0411 (wrong-import-order)  Number of occurrences: 1.
+  [Line 2] standard import "from typing import List" should be placed before "from word import Definition, Entry"
+    1  from word import Definition, Entry
+    2  from typing import List
+    3  
+    4  class MyDictionary:
+
+
+=================== End: checking coding style ===================
+
+============ Start: checking class attributes ============
+
+Checking class Definition in word.py ... All good!
+Checking class Entry in word.py ... All good!
+Checking class MyDictionary in dictionary_class.py ... All good!
+
+============= End: checking parameter and return types =============
+
