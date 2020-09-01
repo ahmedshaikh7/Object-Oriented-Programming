@@ -13,9 +13,7 @@ class MyDictionary:
         return self.__num_entries__
 
     def suggest_closest_word(self, word: str) -> str:
-        
-        #score_werd = self.__levenshtein_dist__(werd, word)
-        #for self.werd in mydictionary:
+       
         
         distance_list = []
         word_list = []
